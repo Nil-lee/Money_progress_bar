@@ -58,22 +58,4 @@
     </div>
     <script>
         async function fetchData() {
-            const sheetURL = "https://docs.google.com/spreadsheets/d/1765848387/gviz/tq?tqx=out:json";
-            try {
-                const response = await fetch(sheetURL);
-                const text = await response.text();
-                const json = JSON.parse(text.substring(47, text.length - 2));
-                const earnings = parseInt(json.table.rows[0].c[0].v, 10);
-                
-                document.getElementById("current-earnings").textContent = earnings;
-                const goal = 20000;
-                const progress = (earnings / goal) * 100;
-                document.getElementById("progress-bar").style.width = progress + "%";
-            } catch (error) {
-                console.error("無法獲取數據", error);
-            }
-        }
-        fetchData();
-    </script>
-</body>
-</html>
+            const sheetURL = "https://docs.google.com/spreadsheets/d/1b3jkho3c9nXK1
